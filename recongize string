@@ -1,0 +1,92 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string inpt;
+    cin>>inpt;
+
+    int lngth=inpt.size(); //size
+
+    int rslt=0; //global veriable
+
+    if(lngth==1)
+    {
+        if(inpt[0]==97 || inpt[0]==98)
+        {
+            rslt=1;
+        }
+        else
+        {
+            rslt=0;
+        }
+    }
+    else
+    {
+    for(int i=0;i<lngth;i++)
+    {
+        if(inpt[i]==97)
+        {
+            for(int j=i+1;j<lngth;j++)  //nested loop
+            {
+                if(inpt[j]==97)
+                {
+                    rslt=1;
+                }
+                else
+                {
+                    for(int k=j+1;k<lngth;k++)
+                    {
+                        if(inpt[k]==98)
+                        {
+                            rslt=1;
+                        }
+                        else
+                        {
+                            rslt=0;
+                            break;
+                        }
+
+                    }
+                    break;
+                }
+            }
+            break;
+        }
+        else if(inpt[i]==98)
+        {
+            for(int j=i+1;j<lngth;j++)
+            {
+                if(inpt[j]==97)
+                {
+                    rslt=0;
+                    break;
+                }
+                else
+                {
+                    rslt=1;
+                }
+            }
+            break;
+        }
+    }
+    }
+    if(rslt==0)
+    {
+        cout<<"Not Accept"<<endl;
+
+    }
+    else
+    {
+        cout<<"Accept"<<endl;
+    }
+
+    return 0;
+}
+
+
+
+// [ab=not accept]    a abbb aaaaaaaaaabbbb aabbbbbbbbbbbbbbb
+
+
