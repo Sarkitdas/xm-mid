@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    cin>>s;
+    int l=s.size();
+    int k=0;
+
+    if(s[0]>='a' && s[0]<='z' || s[0]>='A' && s[0]<='Z' || s[0]=='_')
+    {
+       for(int i=0;i<l;i++)
+    {
+        if(s[i]>='a' && s[i]<='z' || s[i]>='A' && s[i]<='Z' || s[i]=='_' || s[i]>='0' && s[i]<='9')
+        {
+            k=1;
+        }
+        else
+        {
+            k=0;
+        }
+    }
+    }
+    else
+    {
+        k=0;
+    }
+
+    if(k==0)
+    {
+        cout<<"ERROR"<<endl;
+    }
+    else
+    {
+        cout<<"RIGHT"<<endl;
+    }
+    return 0;
+}
