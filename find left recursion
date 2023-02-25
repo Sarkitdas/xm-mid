@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void loop(){
+    int r;
+    string s;
+    cin>>s;
+if(s[0]==s[2])
+{
+    r=1;
+}
+else
+{
+    for(int i=0;i<s.size();i++)
+    {
+        char c=124;
+        char d=s[i];
+        if(d==c)
+        {
+            if(s[i+1]==s[0])
+            {
+                r=1;
+                break;
+            }
+            else{
+                r=0;
+            }
+        }
+        else{
+            r=0;
+        }
+    }
+}
+if(r==1)
+       {
+           cout<<"Grammar is left recursive"<<endl;
+       }
+       else
+       {
+           cout<<"Grammar is not left recursive"<<endl;
+       }
+};
+
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    while(n--)
+    {
+       loop();
+    }
+
+    return 0;
+}
