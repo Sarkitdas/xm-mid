@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void loop(){
+    int n;
+    string check;
+    int result=0;
+    string d;
+    int r=0;
+    cin>>n; //10
+    string rs;
+    string s[n];
+    for(int i=0;i<n;i++) //9
+    {
+        cin>>s[i];  //as asss sdc  //asss ss add
+    }
+    check=s[0];
+    for(int i=0;i<n;i++)
+    {
+        if(check.size()<s[i+1].size())
+        {
+            check=check;
+        }
+        else
+
+        {
+            check=s[i+1];
+        }
+    }
+
+    for(int i=0;i<check.size();i++)   //as csd adssd  cas//cas lasd kasd
+    {
+        for(int j=0;j<n;j++)   //dcc dcl dcd   //as cads bc
+        {
+           if(check[i]==s[j][i])
+           {
+               result=i;
+               r=r+1;
+           }
+           else{
+            result=result;
+           }
+        }
+        if(r>=2)
+        {
+           cout<<check[result];
+        }
+    }
+};
+int main()
+{
+    loop();
+
+    return 0;
+}
