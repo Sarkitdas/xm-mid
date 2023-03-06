@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void loop()
+{
+    string s;
+    stack <char> check;
+    cin>>s;
+    for(int i=0;i<s.size();i++)  //   (([()])))
+    {
+        if(s[i]=='(' || s[i]=='[')
+        {
+            check.push(s[i]);
+        }
+        else if(check.top()=='[' && s[i]==']')
+        {
+            check.pop();
+        }
+        else if(check.top()=='(' && s[i]==')')
+        {
+            check.pop();
+        }
+        else
+        {
+            check.push(s[i]);
+            break;
+        }
+
+    }
+        if(check.size()==0)
+        {
+            cout<<"Yes"<<endl;
+        }
+        else if(check.size()>=1)
+        {
+            cout<<check.size()<<endl;
+            cout<<"No"<<endl;
+        }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+    loop();
+    }
+    return 0;
+}
